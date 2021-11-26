@@ -8,10 +8,10 @@ class DB{
     private $charset;
 
     public function __construct(){
-        $this->host     = 'localhost';
-        $this->db       = 'tiendita-chela-definitivo';
-        $this->user     = 'root';
-        $this->password = "";
+        $this->host     = 'bjxtzrsocmqp5kx8dfko-mysql.services.clever-cloud.com';
+        $this->db       = 'bjxtzrsocmqp5kx8dfko';
+        $this->user     = 'u8s1kbhqvwuzd0lz';
+        $this->password = "BUY4RIgj5odlZZ6PVMAd";
         $this->charset  = 'utf8mb4';
     }
 
