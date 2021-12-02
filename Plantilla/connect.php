@@ -9,7 +9,7 @@
 	if(mysqli_connect_errno()){
 		echo "no se pudo conectar";
 	}
-fgdfgdfg
+
 ?>
 <body>
 </body>
