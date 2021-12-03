@@ -37,7 +37,7 @@
 											<li><a href="index.php">Inicio</a></li>
                                             <li><a href="Informacion.php">Información</a></li>
                                                 <li><a href="Calculadora.php">Calculadora</a></li>
-                                                <li><a href="Recibos.php">Recibos</a></li>
+                                                <li class="nav-item active"><a href="Recibos.php">Recibos</a></li>
                                                 <li><a href="Contactos.php">Contacto</a></li>
                                                 <li><a href="salir.php">Salir</a></li> 
                                                 <li><a href="Login.php">Sesión:

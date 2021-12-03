@@ -35,7 +35,7 @@
 									<div id="main-nav" class="collapse navbar-collapse">
 										<ul class="menu-first nav navbar-nav" style="margin-right: 20px;">
 											<li><a href="index.php">Inicio</a></li>
-                                            <li><a href="Informacion.php">Información</a></li>
+                                            <li class="nav-item active"><a href="Informacion.php">Información</a></li>
                                                 <li><a href="Calculadora.php">Calculadora</a></li>
                                                 <li><a href="Recibos.php">Recibos</a></li>
                                                 <li><a href="Contactos.php">Contacto</a></li>
