@@ -67,7 +67,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="section-heading">
-						<br><br><br><h1>CONTÁCTOS</h1>
+						<br><br><br><h1>CONTACTOS</h1>
                         <p>Somos un equipo de cinco integrantes que quiere apoyar a la comunidad y mejorar el medio ambiente. Si necesitas más información sobre la calculadora, puedes contactarnos de manera privada y con gusto lo atenderemos.</p>
 						
 						<br><h2>Integrantes del equipo</h2><br>
