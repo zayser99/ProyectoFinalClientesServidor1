@@ -34,7 +34,7 @@
                                     <a href="#top" class="navbar-brand">Energías</a>
 									<div id="main-nav" class="collapse navbar-collapse">
 										<ul class="menu-first nav navbar-nav" style="margin-right: 20px;">
-											<li><a href="index.html">Inicio</a></li>
+											<li><a href="index.php">Inicio</a></li>
                                             <li><a href="Informacion.php">Información</a></li>
                                                 <li><a href="Calculadora.php">Calculadora</a></li>
                                                 <li><a href="Recibos.php">Recibos</a></li>

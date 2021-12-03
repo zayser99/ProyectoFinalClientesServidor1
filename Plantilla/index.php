@@ -59,7 +59,7 @@ https://templatemo.com/tm-508-power
                                                 $usuario = $_SESSION['user'];
                                                 
                                                 if(!isset($usuario)){
-                                                header("location: index.php");
+                                                
                                                 echo "Sin sesion";
                                                 }else{
                                                 echo ($usuario);
