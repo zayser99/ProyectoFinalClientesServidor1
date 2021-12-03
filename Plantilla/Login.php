@@ -20,7 +20,19 @@
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 </head>
 <body>
-	
+<?php
+error_reporting(0);
+session_start();
+
+$usuario = $_SESSION['user'];
+
+if(!isset($usuario)){
+#header( "refresh:1;url=".$_SERVER['PHP_SELF'] );
+}else{
+echo ($usuario);
+header("location: index.php");
+}
+?>
 	<form class="formulario" name="form1" method="post" action="logic/p_sesion.php" id="form1">
 		<h1>Inicia Sesión</h1>
 		<div class="contenedor">

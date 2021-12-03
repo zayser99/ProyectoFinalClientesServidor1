@@ -47,11 +47,25 @@ https://templatemo.com/tm-508-power
                                         <div id="main-nav" class="collapse navbar-collapse">
                                             <ul class="menu-first nav navbar-nav" style="margin-right: 20px;">
                                                 <li class="nav-item active"><a href="index.php">Inicio<span class="sr-only">(current)</span></a></li>
-                                                <li><a href="Información.php">Información</a></li>
+                                                <li><a href="Informacion.php">Información</a></li>
                                                 <li><a href="Calculadora.php">Calculadora</a></li>
                                                 <li><a href="Recibos.php">Recibos</a></li>
-                                                <li><a href="Contactos.php">Contacto</a></li> 
-                                                <li><a href="Login.php">Iniciar sesión</li>                                
+                                                <li><a href="Contactos.php">Contacto</a></li>
+                                                <li><a href="salir.php">Salir</a></li> 
+                                                <li><a href="Login.php">Sesión:
+                                                <?php
+                                                session_start();
+                                                error_reporting(0);
+                                                $usuario = $_SESSION['user'];
+                                                
+                                                if(!isset($usuario)){
+                                                header("location: index.php");
+                                                echo "Sin sesion";
+                                                }else{
+                                                echo ($usuario);
+                                                }
+                                                ?></li> 
+                                                                               
                                             </ul>                                    
                                         </div> <!-- /.main-menu -->
                                     </div>
