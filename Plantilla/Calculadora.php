@@ -89,18 +89,19 @@
 											<div class="product-image2">
 												<a href="#">
 												<img class="pic-1" width="100%" height="240" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen_producto']); ?>">
+												<img class="pic-2" width="100%" height="240" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen_producto']); ?>">
 												</a>
 											</div>
 											<div class="product-content">
 												<h3 class="title"><a href="#"> <?php echo $row['nombre_aparato'];  ?> </a></h3>
-												<span class="price"><?php echo $row['consumo_ind'];  ?></span>
+												<span class="price"><?php echo $row['consumo_ind'];  ?> wh/h</span>
 											</div>
 											<form action="pp_carrito.php" method="POST">
 											<input type="hidden" name="aparato" value="<?php echo $row['nombre_aparato'];?>">
 											<input type="hidden" name="consumo" value="<?php echo $row['consumo_ind'];?>">
 											
-											<input style="text-align:center" type="number"  min="1" max="100" step="1" name="cantidad" value="1" >
-											<br><br>
+											<input style="text-align:center" type="number"  min="1" max="50" step="1" name="cantidad" value="1" >
+											<br><br><br><br>
 											<button type="submit" name="agrega_calculo" class="add-to-cart">AGREGAR</button>
 											</form>
 										</div>
