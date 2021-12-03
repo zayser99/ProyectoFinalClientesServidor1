@@ -75,21 +75,25 @@
                         <p>Agregue un recibo:</p>
                         <div class="contenedor">  
                             <div class="input-contenedor">
+                            <label for="name">Consumo en kWh:<br></label>
                                 <input name="consumo" type="text" placeholder="Ingresa el consumo"><br><br>
                             </div>
 
                             <div class="input-contenedor">
+                            <label for="name">Monto total: $ <br></label>
                                 <input name="monto" type="text" placeholder="Ingresa el monto"><br><br>
                             </div>
                     
                             <div class="input-contenedor">
+                            <label for="name">Año:<br></label>
                                 <input name="anio" type="text" placeholder="Ingresa el año"><br><br>
                             </div>
 
                             <div class="input-contenedor">
-                            <input name="usuario" type="hidden" placeholder="Ingresa el anio" value=<?php echo $usuario;?> >                                      
+                            <input name="usuario" type="hidden" placeholder="Ingresa el usuario" value=<?php echo $usuario;?> >                                      
                             </div>
                             <div class="input-contenedor">
+                            <label for="name">Bimestre:<br></label>
                                 <select class="form-select" name="bimestre">
                                     <option> Selecciona el bimestre</option>
                                     <?php
@@ -108,11 +112,36 @@
                             <input type="submit" value="Registrar recibo" class="button">
                         </div>
                     </form><br><br>	
-                    <form class="formulario" name="form2" method="post" action="logic/p_recibo.php" id="form2">										
+                    <form class="formulario" name="form2" method="post" action="Recibos.php" id="form2">
+                    <input name="usuario" type="hidden" placeholder="Ingresa el usuario" value=<?php echo $usuario;?> >										
                         <p>Ingrese el año para ver sus recibos: <input type="text" id="year" name="year"></p>
-                        <input type="submit" value="Buscar recibo" class="button">
+                        <button type="submit" name="busca_recibo" class="add-to-cart">BUSCAR</button>
                     </form>
-						
+                    <?php 
+include('connect.php');
+$year = $_POST["year"];
+$usuario = $_POST["usuario"];
+$resultados = mysqli_query($mysqli,"SELECT id_usuario FROM usuario WHERE nombre_usuario LIKE '$usuario'");
+while($consulta = mysqli_fetch_array($resultados))
+{
+$idu=$consulta['id_usuario'];
+}
+if(isset($_POST['busca_recibo'])){
+$query = "SELECT * FROM recibo INNER JOIN bimestre ON recibo.id_bimestre = bimestre.id_bimestre  WHERE recibo.anio ='$year' and recibo.id_usuario='$idu'";
+$resultados = mysqli_query($mysqli,$query);
+ while($row = $resultados->fetch_assoc()){ 
+ echo "Codigo de recibo: ".$row['id_recibo']."<br>";
+ echo "Fecha de registro: ".$row['fecha_reg']."<br>";
+ echo "Consumo: ".$row['consumo']." kWh"."<br>";
+ echo "Monto: $ ".$row['monto']."<br>";
+ echo "Año: ".$row['anio']."<br>";
+ echo "Usuario: ".$usuario."<br>";
+ echo "Bimestre: ".$row['nombre_bimestre']."<br>";
+ }
+
+}
+
+?>	
 						<br><br><br>
 					</div>
 				</div>

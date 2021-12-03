@@ -71,7 +71,7 @@
 				<div class="col-md-12">
 					<div class="section-heading">
 						<br><br><br><h1>CALCULADORA DE ENERGÍAS LIMPIAS</h1>
-                        <p>Elige tipo de aparatos:</p><br><br>
+                        <p>Elige el tipo de aparato:</p><br><br>
 						
 						<center><div class="calculadora">
 
@@ -95,8 +95,7 @@
 											<div class="product-content">
 												<h3 class="title"><a href="#"> <?php echo $row['nombre_aparato'];  ?> </a></h3>
 												<span class="price"><?php echo $row['consumo_ind'];  ?> wh/h</span>
-											</div>
-											<form action="p_calculo.php" method="POST">
+                                                <form action="p_calculo.php" method="POST">
 											<input type="hidden" name="aparato" value="<?php echo $row['nombre_aparato'];?>">
 											<input type="hidden" name="consumo" value="<?php echo $row['consumo_ind'];?>">
 											
@@ -104,11 +103,13 @@
 											<br><br><br><br>
 											<button type="submit" name="agrega_calculo" class="add-to-cart">AGREGAR</button>
 											</form>
+                                            </div>
+											
 										</div>
-									</div>
-									<?php
-									}
-									?>
+                                  	</div>
+                                    <?php
+									    }
+									    ?>
 								</div>
 							</div>
 							<hr>							
