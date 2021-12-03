@@ -69,13 +69,61 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="section-heading">
-						<br><br><br><h1>RECIBOS</h1>
-                        <p>Ingrese el año para ver sus recibos: <input type="text" id="year" name="year"></p>
-						<button id="enter">Insertar</button>
 						<br><br><br>
-						<p>Tipo de calculo por realizar: </p>
-						<button id="solar">Paneles solares</button>
-						<button id="eolica">Eólica</button>
+        <form class="formulario" name="form1" method="post" action="logic/p_recibo.php" id="form1">
+        <h1>RECIBOS</h1>
+        <p>Agregue un recibo:</p>
+   	    <div class="contenedor">  
+     		<div class="input-contenedor">
+         		<input name="consumo" type="text" placeholder="Ingresa el consumo">
+         	</div>
+
+			 <div class="input-contenedor">
+				<input name="monto" type="text" placeholder="Ingresa el monto">
+			</div>
+    
+         	<div class="input-contenedor">
+         		<input name="anio" type="text" placeholder="Ingresa el anio">
+         	</div>
+
+			 <div class="input-contenedor">
+				<select class="form-select" name="usuario">
+					<option> Selecciona el usuario</option>
+					<?php
+						include("connect.php");
+						$consulta="SELECT * FROM usuario";
+						$ejecutar=mysqli_query($mysqli,$consulta);
+					?>
+					<?php
+					foreach ($ejecutar as $opciones): 
+					?>
+				  <option value="<?php echo $opciones['id_usuario'] ?>">
+					<?php echo $opciones['nombre_usuario']?> </option>
+					<?php endforeach ?>
+				  </select>
+         	</div>
+             <div class="input-contenedor">
+				<select class="form-select" name="bimestre">
+					<option> Selecciona el bimestre</option>
+					<?php
+						include("connect.php");
+						$consulta="SELECT * FROM usuario";
+						$ejecutar=mysqli_query($mysqli,$consulta);
+					?>
+					<?php
+					foreach ($ejecutar as $opciones): 
+					?>
+				  <option value="<?php echo $opciones['id_bimestre'] ?>">
+					<?php echo $opciones['nombre_bimestre']?> </option>
+					<?php endforeach ?>
+				  </select>
+         	</div>
+			 <input type="submit" value="Registrar_recibo" class="button">
+     	</div>
+	</form>											
+                        <p>Ingrese el año para ver sus recibos: <input type="text" id="year" name="year"></p>
+						
+						<br><br><br>
 					</div>
 				</div>
 			</div>

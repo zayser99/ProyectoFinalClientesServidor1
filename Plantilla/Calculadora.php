@@ -96,7 +96,7 @@
 												<h3 class="title"><a href="#"> <?php echo $row['nombre_aparato'];  ?> </a></h3>
 												<span class="price"><?php echo $row['consumo_ind'];  ?> wh/h</span>
 											</div>
-											<form action="pp_carrito.php" method="POST">
+											<form action="p_calculo.php" method="POST">
 											<input type="hidden" name="aparato" value="<?php echo $row['nombre_aparato'];?>">
 											<input type="hidden" name="consumo" value="<?php echo $row['consumo_ind'];?>">
 											
