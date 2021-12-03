@@ -70,58 +70,48 @@
 				<div class="col-md-12">
 					<div class="section-heading">
 						<br><br><br>
-        <form class="formulario" name="form1" method="post" action="logic/p_recibo.php" id="form1">
-        <h1>RECIBOS</h1>
-        <p>Agregue un recibo:</p>
-   	    <div class="contenedor">  
-     		<div class="input-contenedor">
-         		<input name="consumo" type="text" placeholder="Ingresa el consumo">
-         	</div>
+                    <form class="formulario" name="form1" method="post" action="logic/p_recibo.php" id="form1">
+                        <h1>RECIBOS</h1>
+                        <p>Agregue un recibo:</p>
+                        <div class="contenedor">  
+                            <div class="input-contenedor">
+                                <input name="consumo" type="text" placeholder="Ingresa el consumo"><br><br>
+                            </div>
 
-			 <div class="input-contenedor">
-				<input name="monto" type="text" placeholder="Ingresa el monto">
-			</div>
-    
-         	<div class="input-contenedor">
-         		<input name="anio" type="text" placeholder="Ingresa el anio">
-         	</div>
+                            <div class="input-contenedor">
+                                <input name="monto" type="text" placeholder="Ingresa el monto"><br><br>
+                            </div>
+                    
+                            <div class="input-contenedor">
+                                <input name="anio" type="text" placeholder="Ingresa el año"><br><br>
+                            </div>
 
-			 <div class="input-contenedor">
-				<select class="form-select" name="usuario">
-					<option> Selecciona el usuario</option>
-					<?php
-						include("connect.php");
-						$consulta="SELECT * FROM usuario";
-						$ejecutar=mysqli_query($mysqli,$consulta);
-					?>
-					<?php
-					foreach ($ejecutar as $opciones): 
-					?>
-				  <option value="<?php echo $opciones['id_usuario'] ?>">
-					<?php echo $opciones['nombre_usuario']?> </option>
-					<?php endforeach ?>
-				  </select>
-         	</div>
-             <div class="input-contenedor">
-				<select class="form-select" name="bimestre">
-					<option> Selecciona el bimestre</option>
-					<?php
-						include("connect.php");
-						$consulta="SELECT * FROM usuario";
-						$ejecutar=mysqli_query($mysqli,$consulta);
-					?>
-					<?php
-					foreach ($ejecutar as $opciones): 
-					?>
-				  <option value="<?php echo $opciones['id_bimestre'] ?>">
-					<?php echo $opciones['nombre_bimestre']?> </option>
-					<?php endforeach ?>
-				  </select>
-         	</div>
-			 <input type="submit" value="Registrar_recibo" class="button">
-     	</div>
-	</form>											
+                            <div class="input-contenedor">
+                            <input name="usuario" type="hidden" placeholder="Ingresa el anio" value=<?php echo $usuario;?> >                                      
+                            </div>
+                            <div class="input-contenedor">
+                                <select class="form-select" name="bimestre">
+                                    <option> Selecciona el bimestre</option>
+                                    <?php
+                                        include("connect.php");
+                                        $consulta="SELECT * FROM bimestre";
+                                        $ejecutar=mysqli_query($mysqli,$consulta);
+                                    ?>
+                                    <?php
+                                    foreach ($ejecutar as $opciones): 
+                                    ?>
+                                <option value="<?php echo $opciones['id_bimestre'] ?>">
+                                    <?php echo $opciones['nombre_bimestre']?> </option>
+                                    <?php endforeach ?>
+                                </select><br><br>
+                            </div>
+                            <input type="submit" value="Registrar recibo" class="button">
+                        </div>
+                    </form><br><br>	
+                    <form class="formulario" name="form2" method="post" action="logic/p_recibo.php" id="form2">										
                         <p>Ingrese el año para ver sus recibos: <input type="text" id="year" name="year"></p>
+                        <input type="submit" value="Buscar recibo" class="button">
+                    </form>
 						
 						<br><br><br>
 					</div>
