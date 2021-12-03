@@ -20,7 +20,7 @@
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 </head>
 <body>
-	<form class="formulario" action="logic/p_registro.php" method="post">
+	<form class="formulario" name="form1" method="post" action="logic/p_registro.php" id="form1">
     
     	<h1>Registrate ¡Es gratis!</h1>
    	  <div class="contenedor">  
@@ -67,10 +67,11 @@
 				  </select>
          	</div>
 
-         	<input type="submit" value="Registrate" class="button">
+			 <input type="submit" value="Registrate" class="button">
+
 			<p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-         	<p>¿Ya tienes una cuenta? <a class="link" href="Login.html">Iniciar Sesion</a></p><br>
-			<center><h3><a class="link" href="index.html">Volver a inicio</a></h3></center>
+         	<p>¿Ya tienes una cuenta? <a class="link" href="Login.php">Iniciar Sesion</a></p><br>
+			<center><h3><a class="link" href="index.php">Volver a inicio</a></h3></center>
      	</div>
 	</form>
 	<?php

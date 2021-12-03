@@ -1,19 +1,15 @@
 <?php
-include('connect.php');
-$name = $_POST["name"];
-$ape = $_POST["ape"];
-$telr = $_POST["telr"];
-$password = $_POST["password"];
+include('../connect.php');
+$name = $_POST["nombre"];
+$ape = $_POST["apellido"];
+$correo = $_POST["correo"];
+$usuario = $_POST["usuario"];
+$rol = $_POST["rol"];
+$password = $_POST["pass"];
 $password = hash('sha512',$password);
 
-$insert = "INSERT INTO clientes(TELEFONO_C, NOMBRE_C, APELLIDO_C) VALUES ('$telr','$name','$ape')";
-
+$insert = "INSERT INTO usuario (id_usuario, nombre_usuario, apellido, correo_usuario, usuario_name, contrasena, id_rol) VALUES (NULL,'$name','$ape','$correo','$usuario','$password','$rol')";
 $result = mysqli_query($mysqli, $insert);
-
-$insert2 = "INSERT INTO usuarios(USUARIO, PASSWORD) VALUES ('$telr','$password')";
-
-$result2 = mysqli_query($mysqli, $insert2);
-
 
 header("Location:../Registro.php");
 ?>

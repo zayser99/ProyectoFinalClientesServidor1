@@ -21,25 +21,19 @@
 </head>
 <body>
 	
-	<form class="formulario">
-		
+	<form class="formulario" name="form1" method="post" action="logic/p_sesion.php" id="form1">
 		<h1>Inicia Sesión</h1>
 		<div class="contenedor">
-     
-     
-         
         	<div class="input-contenedor">
         		<i class="fas fa-envelope icon"></i>
-         		<input type="text" placeholder="Correo Electronico">
-         
+         		<input name="correo" type="text" placeholder="Correo Electronico">
         	</div>
-         
         	<div class="input-contenedor">
         		<i class="fas fa-key icon"></i>
-         		<input type="password" placeholder="Contraseña">
+         		<input name="pass" type="password" placeholder="Contraseña">
          
         	</div>
-        	<input type="submit" value="Acceder" class="button"><br>
+        	<input type="submit" name="ingresar" value="Acceder" class="button"><br>
          	<p>¿No tienes una cuenta? <a class="link" href="Registro.php">Registrate </a></p><br>
 			<center><h3><a class="link" href="index.php">Volver a inicio</a></h3></center>
      	</div>
