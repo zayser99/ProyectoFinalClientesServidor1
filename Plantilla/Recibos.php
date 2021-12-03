@@ -118,30 +118,31 @@
                         <button type="submit" name="busca_recibo" class="add-to-cart">BUSCAR</button>
                     </form>
                     <?php 
-include('connect.php');
-$year = $_POST["year"];
-$usuario = $_POST["usuario"];
-$resultados = mysqli_query($mysqli,"SELECT id_usuario FROM usuario WHERE nombre_usuario LIKE '$usuario'");
-while($consulta = mysqli_fetch_array($resultados))
-{
-$idu=$consulta['id_usuario'];
-}
-if(isset($_POST['busca_recibo'])){
-$query = "SELECT * FROM recibo INNER JOIN bimestre ON recibo.id_bimestre = bimestre.id_bimestre  WHERE recibo.anio ='$year' and recibo.id_usuario='$idu'";
-$resultados = mysqli_query($mysqli,$query);
- while($row = $resultados->fetch_assoc()){ 
- echo "Codigo de recibo: ".$row['id_recibo']."<br>";
- echo "Fecha de registro: ".$row['fecha_reg']."<br>";
- echo "Consumo: ".$row['consumo']." kWh"."<br>";
- echo "Monto: $ ".$row['monto']."<br>";
- echo "Año: ".$row['anio']."<br>";
- echo "Usuario: ".$usuario."<br>";
- echo "Bimestre: ".$row['nombre_bimestre']."<br>";
- }
-
-}
-
-?>	
+                    include('connect.php');
+                    $year = $_POST["year"];
+                    $usuario = $_POST["usuario"];
+                    $resultados = mysqli_query($mysqli,"SELECT id_usuario FROM usuario WHERE nombre_usuario LIKE '$usuario'");
+                    while($consulta = mysqli_fetch_array($resultados))
+                    {
+                    $idu=$consulta['id_usuario'];
+                    }
+                    if(isset($_POST['busca_recibo'])){
+                    $query = "SELECT * FROM recibo INNER JOIN bimestre ON recibo.id_bimestre = bimestre.id_bimestre  WHERE recibo.anio ='$year' and recibo.id_usuario='$idu'";
+                    $resultados = mysqli_query($mysqli,$query);
+                    while($row = $resultados->fetch_assoc()){ 
+                    echo "Codigo de recibo: ".$row['id_recibo']."<br>";
+                    echo "Fecha de registro: ".$row['fecha_reg']."<br>";
+                    echo "Consumo: ".$row['consumo']." kWh"."<br>";
+                    echo "Monto: $ ".$row['monto']."<br>";
+                    echo "Año: ".$row['anio']."<br>";
+                    echo "Usuario: ".$usuario."<br>";
+                    echo "Bimestre: ".$row['nombre_bimestre']."<br>";
+                    }//fin while
+                    $nrows = mysqli_num_rows($resultados);
+                    if(($nrows == 0)){
+                        echo "No se encontraron recibos";}
+                    }
+                    ?>	
 						<br><br><br>
 					</div>
 				</div>
