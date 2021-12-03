@@ -50,7 +50,7 @@
                                                 }else{
                                                 echo ($usuario);
                                                 }
-                                                ?></li>                                 
+                                                ?></a></li>                                 
                                          </ul>                                    
                                     </div> <!-- /.main-menu -->
                                 </div>
