@@ -80,90 +80,40 @@
 							<div class="container">
 								<h3 class="h3">APARATOS</h3>
 								<div class="row">
+								<?php 
+								include('connect.php');
+								$query = "SELECT * FROM aparato";
+								$resultados = mysqli_query($mysqli,$query);
+								while($row = $resultados->fetch_assoc()){
+								?>
 									<div class="col-md-3 col-sm-6">
 										<div class="product-grid2">
 											<div class="product-image2">
 												<a href="#">
-													<img class="pic-1" src="img/aspiradora.png">
-													<img class="pic-2" src="img/aspiradora.png">
+												<img class="pic-1" width="100%" height="240" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen_producto']); ?>">
 												</a>
-												<ul class="social">
-													<li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-													<li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-													<li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-												</ul>
-												<a class="add-to-cart" href="">Add to cart</a>
 											</div>
 											<div class="product-content">
-												<h3 class="title"><a href="#">Women's Designer Top</a></h3>
-												<span class="price">$599.99</span>
+												<h3 class="title"><a href="#"> <?php echo $row['nombre_aparato'];  ?> </a></h3>
+												<span class="price"><?php echo $row['consumo_ind'];  ?></span>
 											</div>
+											<form action="pp_carrito.php" method="POST">
+											<input type="hidden" name="aparato" value="<?php echo $row['nombre_aparato'];?>">
+											<input type="hidden" name="consumo" value="<?php echo $row['consumo_ind'];?>">
+											
+											<input style="text-align:center" type="number"  min="1" max="100" step="1" name="cantidad" value="1" >
+											<br><br>
+											<button type="submit" name="agrega_calculo" class="add-to-cart">AGREGAR</button>
+											</form>
 										</div>
 									</div>
-									<div class="col-md-3 col-sm-6">
-										<div class="product-grid2">
-										  <div class="product-image2">
-											  <a href="#">
-												  <img class="pic-1" src="img/computadora.jpg">
-												  <img class="pic-2" src="img/computadora.jpg">
-											  </a>
-											  <ul class="social">
-												  <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-												  <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-												  <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-											  </ul>
-											  <a class="add-to-cart" href="">Add to cart</a>
-											</div>
-											<div class="product-content">
-												<h3 class="title"><a href="#">Women's Yellow Top</a></h3>
-												<span class="price">$699.99</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3 col-sm-6">
-										<div class="product-grid2">
-											<div class="product-image2">
-												<a href="#">
-													<img class="pic-1" src="img/horno.jpg">
-													<img class="pic-2" src="img/horno.jpg">
-												</a>
-												<ul class="social">
-													<li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-													<li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-													<li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-												</ul>
-												<a class="add-to-cart" href="">Add to cart</a>
-											</div>
-											<div class="product-content">
-												<h3 class="title"><a href="#">Women's Designer Top</a></h3>
-												<span class="price">$599.99</span>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-3 col-sm-6">
-										<div class="product-grid2">
-											<div class="product-image2">
-												<a href="#">
-													<img class="pic-1" src="img/lavadora.png">
-													<img class="pic-2" src="img/lavadora.png">
-												</a>
-												<ul class="social">
-													<li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-													<li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-													<li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-												</ul>
-												<a class="add-to-cart" href="">Add to cart</a>
-											</div>
-											<div class="product-content">
-												<h3 class="title"><a href="#">Women's Designer Top</a></h3>
-												<span class="price">$599.99</span>
-											</div>
-										</div>
-									</div>
+									<?php
+									}
+									?>
 								</div>
 							</div>
 							<hr>							
-						</div></center>
+						</div></center><!--hasta aqui va un registro de aparato-->
 						
 					</div>
 				</div>
