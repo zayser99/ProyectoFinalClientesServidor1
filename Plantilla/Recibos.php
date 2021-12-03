@@ -16,7 +16,7 @@
 
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 </head>
-<body>
+<body style=" background-image:url(img/fd1.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">
 	<div class="site-main" id="sTop">
 		<div class="site-header">
 			<div class="main-header">
@@ -66,12 +66,15 @@
 	
 	<div class="search">
 		<div class="container">
+        
 			<div class="row">
-				<div class="col-md-12">
+            <div class="col-md-2"></div>
+				<div class="col-md-8">
 					<div class="section-heading">
 						<br><br><br>
+                    <div  style="padding-left: 10px; padding-right: 5px;opacity:0.9;" class="panel panel-default">
                     <form class="formulario" name="form1" method="post" action="logic/p_recibo.php" id="form1">
-                        <h1>RECIBOS</h1>
+                        <h1 style="font-family: serif;font-weight: bolder;">RECIBOS</h1>
                         <p>Agregue un recibo:</p>
                         <div class="contenedor">  
                             <div class="input-contenedor">
@@ -144,9 +147,11 @@
                     }
                     ?>	
 						<br><br><br>
+                    </div>
 					</div>
 				</div>
 			</div>
+       
 		</div>
 	</div>
 	

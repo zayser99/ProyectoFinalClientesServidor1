@@ -19,7 +19,7 @@
 
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 </head>
-<body>
+<body style=" background-image:url(img/fd2.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">
 	<div class="site-main" id="sTop">
 		<div class="site-header">
 			<div class="main-header">
@@ -70,13 +70,14 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="section-heading">
-						<br><br><br><h1>CALCULADORA DE ENERGÍAS LIMPIAS</h1>
-                        <p>Elige el tipo de aparato:</p><br><br>
-						
+                        <div style="color:white;background:green;opacity:0.8;font-family: serif;font-weight: bolder;font-size: xx-large">
+						<br>CALCULADORA DE ENERGÍAS LIMPIAS
+                        <h1 >Elige el tipo de aparato:</h1><br>
+                        </div>
 						<center><div class="calculadora">
-
+                        <div  style="padding-left: 10px; padding-right: 5px;opacity:0.9;" class="panel panel-default">
 							<div class="container">
-								<h3 class="h3">APARATOS</h3>
+								<h1 style="font-family: serif;font-weight: bolder;">APARATOS</h1>
 								<div class="row">
 								<?php 
 								include('connect.php');
@@ -112,9 +113,10 @@
 									    ?>
 								</div>
 							</div>
+                            </div>
 							<hr>							
 						</div></center><!--hasta aqui va un registro de aparato-->
-						
+                    	
 					</div>
 				</div>
 			</div>
