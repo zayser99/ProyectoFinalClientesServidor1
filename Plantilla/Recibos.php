@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="css/owl-carousel.css">
 
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="css/grid_productos.css">
 </head>
 <body style=" background-image:url(img/fd1.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">
 	<div class="site-main" id="sTop">
@@ -112,14 +114,23 @@
                                     <?php endforeach ?>
                                 </select><br><br>
                             </div>
-                            <input type="submit" value="Registrar recibo" class="button">
+                            <button type="submit"  class="btn btn-primary">REGISTRAR</button>
                         </div>
                     </form><br><br>	
                     <form class="formulario" name="form2" method="post" action="Recibos.php" id="form2">
                     <input name="usuario" type="hidden" placeholder="Ingresa el usuario" value=<?php echo $usuario;?> >										
                         <p>Ingrese el año para ver sus recibos: <input type="text" id="year" name="year"></p>
-                        <button type="submit" name="busca_recibo" class="add-to-cart">BUSCAR</button>
+                        <button type="submit" name="busca_recibo" class="btn btn-success">BUSCAR</button>
                     </form>
+                    
+                    <div style="text-align: rigth">
+                    
+                    </div>
+                    
+					<br>
+                    </div>
+					</div>
+                    
                     <?php 
                     include('connect.php');
                     $year = $_POST["year"];
@@ -132,28 +143,48 @@
                     if(isset($_POST['busca_recibo'])){
                     $query = "SELECT * FROM recibo INNER JOIN bimestre ON recibo.id_bimestre = bimestre.id_bimestre  WHERE recibo.anio ='$year' and recibo.id_usuario='$idu'";
                     $resultados = mysqli_query($mysqli,$query);
-                    while($row = $resultados->fetch_assoc()){ 
-                    echo "Codigo de recibo: ".$row['id_recibo']."<br>";
-                    echo "Fecha de registro: ".$row['fecha_reg']."<br>";
-                    echo "Consumo: ".$row['consumo']." kWh"."<br>";
-                    echo "Monto: $ ".$row['monto']."<br>";
-                    echo "Año: ".$row['anio']."<br>";
-                    echo "Usuario: ".$usuario."<br>";
-                    echo "Bimestre: ".$row['nombre_bimestre']."<br>";
+                    while($row = $resultados->fetch_assoc()){ ?>
+                    
+                    <div class="col-md-6 col-sm-12">
+                    <div class="product-grid2">
+                    <div class="product-content">
+                    <div class="price" style="text-align: left;color: white;background:green;padding:10px;opacity:0.8;">
+                    
+                    <?php
+                    echo "<b>Codigo de recibo: </b>".$row['id_recibo']."<br>";
+                    echo "<b>Fecha de registro: </b>".$row['fecha_reg']."<br>";
+                    echo "<b>Consumo: </b>".$row['consumo']." kWh"."<br>";
+                    echo "<b>Monto: $ </b>".$row['monto']."<br>";
+                    echo "<b>Año: </b>".$row['anio']."<br>";
+                    echo "<b>Usuario: </b>".$usuario."<br>";
+                    echo "<b>Bimestre: </b>".$row['nombre_bimestre']."<br>";
+                    ?>
+                    </div>   
+                    </div>
+                    </div>
+                    <br> <br> 
+                    </div>
+
+                    <?php
                     }//fin while
                     $nrows = mysqli_num_rows($resultados);
                     if(($nrows == 0)){
-                        echo "No se encontraron recibos";}
+                        echo ";<script>
+                        swal({title: 'Recibos no encontrados!!', icon: 'warning',button:'OK',}).then((value)=>{window.location.href='Recibos.php'});
+                        </script>";
                     }
-                    ?>	
-						<br><br><br>
-                    </div>
-					</div>
-				</div>
+                      
+                    }
+                    ?>
+                    
+				</div> 
+                <div class="col-md-2"></div>
 			</div>
        
 		</div>
 	</div>
+
+    
 	
 	<footer>
             <div class="container">
