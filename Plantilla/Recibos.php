@@ -76,7 +76,7 @@
 						<br><br><br>
                     <div  style="padding-left: 10px; padding-right: 5px;opacity:0.9;" class="panel panel-default">
                     <form class="formulario" name="form1" method="post" action="logic/p_recibo.php" id="form1">
-                        <h1 style="font-family: serif;font-weight: bolder;">RECIBOS</h1>
+                        <h1 style="font-family: serif;font-weight: bolder;color:#0C8B88;">RECIBOS</h1>
                         <p>Agregue un recibo:</p>
                         <div class="contenedor">  
                             <div class="input-contenedor">
