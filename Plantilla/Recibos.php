@@ -79,7 +79,7 @@
                         <div class="contenedor">  
                             <div class="input-contenedor">
                             <label for="name">Consumo en kWh:<br></label>
-                                <input name="consumo" type="text" placeholder="Ingresa el consumo"><br><br>
+                                <input name="consumo" type="text" placeholder="Ingresa el consumoo"><br><br>
                             </div>
 
                             <div class="input-contenedor">
