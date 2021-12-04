@@ -16,7 +16,7 @@
 
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 </head>
-<body>
+<body  style=" background-image:url(img/fd5.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">
 	<div class="site-main" id="sTop">
 		<div class="site-header">
 			<div class="main-header">
@@ -65,10 +65,12 @@
 	<div class="info">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+                <div class="col-md-2"></div>
+				<div class="col-md-8">
 					<div class="section-heading">
+                    <div  style="padding-left: 10px; padding-right: 5px;opacity:0.8;color:#0C8B88;" class="panel panel-default">
 						<br><br><br><h1>CONTACTOS</h1>
-                        <p>Somos un equipo de cinco integrantes que quiere apoyar a la comunidad y mejorar el medio ambiente. Si necesitas más información sobre la calculadora, puedes contactarnos de manera privada y con gusto lo atenderemos.</p>
+                        <p style="text-align:justify;">Somos un equipo de cinco integrantes que quiere apoyar a la comunidad y mejorar el medio ambiente. Si necesitas más información sobre la calculadora, puedes contactarnos de manera privada y con gusto lo atenderemos.</p>
 						
 						<br><h2>Integrantes del equipo</h2><br>
 						<br><h3>Luis Gustavo Ramírez Morales</h3>
@@ -92,7 +94,9 @@
                         <p><img src="img/mail.png " width="40" height="40"/> 180854@mail.unacar.mx</p>
 						<p><img src="img/tel.png" width="40" height="40"/> 993-103-3856</p>
 					</div>
+                    </div>
 				</div>
+                <div class="col-md-2"></div>
 			</div>
 		</div>
 	</div>

@@ -70,7 +70,7 @@
                 <div class="col-md-2"></div>
 				<div class="col-md-8">
 					<div class="section-heading">
-                    <div  style="padding-left: 10px; padding-right: 5px;opacity:0.9;color:skyblue;" class="panel panel-default">
+                    <div  style="padding-left: 10px; padding-right: 5px;opacity:0.9;color:#0C8B88;" class="panel panel-default">
 
 						<br><br><br><h1><b>LAS ENERGÍAS LIMPIAS</b></h1>
                         <p style="text-align:justify;">Las energías limpias son aquellas fuentes de energía y procesos de generación de electricidad cuyas emisiones o residuos, cuando los haya, no rebasen los umbrales establecidos en las disposiciones reglamentarias que para tal efecto se expidan.</p>
@@ -86,7 +86,7 @@
 						<img src="img/biomasa.jpg" width="450" height="250"/><br><br>
                         <p style="text-align:justify;">Aunque la biomasa no forma parte de la calculadora, es interesante saber este tipo de energía limpia. También conocida como bioenergía, es la energía obtenida de la materia orgánica constitutiva de los seres vivos, sus excretas y sus restos no vivos. La formación de biomasa se da a partir de la energía solar, la cual se lleva a cabo por el proceso denominado fotosíntesis. Mediante la fotosíntesis, las plantas que contienen clorofila, transforman el bióxido de carbono (CO2) y el agua de productos minerales sin valor energético, en materiales orgánicos con alto contenido energético y que a su vez sirven de alimento para otros seres vivos. Mediante este proceso se almacena la energía solar en forma de biomasa.</p>
                         <br><h3 style="font-family: serif;font-weight: bolder;font-size: xx-large">Hidráulica</h3>
-						<img src="img/biomasa.jpg" width="450" height="250" /><br><br>
+						<img src="img/fd6.jpg" width="450" height="250" /><br><br>
                         <p style="text-align:justify;">La energía hidráulica, también conocida como energía hidroeléctrica, es aquella energía alternativa que se obtiene del aprovechamiento de las energías cinéticas y potenciales de la corriente del agua, saltos de agua o mareas, ya sea mediante molinos o presas.</p>
                     </div>
                     </div>
