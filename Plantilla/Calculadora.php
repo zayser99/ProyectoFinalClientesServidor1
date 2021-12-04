@@ -73,7 +73,7 @@
                         <div style="color:white;background:green;opacity:0.8;font-family: serif;font-weight: bolder;font-size: xx-large">
 						<br>CALCULADORA DE ENERGÍAS LIMPIAS
                         <h1 >Elige el tipo de aparato:</h1>
-                        <h3 style="text-align:center;" >¿No encontraste tu aparato? Registra <a href="Aparato.php" style="color:white;">Aquí</a>     </h3><br>
+                        <h3 style="text-align:center;" >¿No encontraste tu electrodoméstico? Registra <a href="Aparato.php" style="color:white;">Aquí</a>     </h3><br>
                         </div>
 						<center><div class="calculadora">
                         <div  style="padding-left: 10px; padding-right: 5px;opacity:0.9;" class="panel panel-default">

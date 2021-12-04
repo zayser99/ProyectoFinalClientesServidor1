@@ -85,7 +85,7 @@
 						<img src="img/contact.png" width="200" height="200"/>
                         <p><img src="img/mail.png " width="40" height="40"/> 152236@mail.unacar.mx</p>
 						<p><img src="img/tel.png" width="40" height="40"/> 938-119-6064</p>
-						<br><h3>Hannia Jazmín Escobedo Zavala</h3>
+						<br><h3>Hannia Jazmin Escobedo Zavala</h3>
 						<img src="img/contact.png" width="200" height="200"/>
                         <p><img src="img/mail.png " width="40" height="40"/> 152790@mail.unacar.mx</p>
 						<p><img src="img/tel.png" width="40" height="40"/> 938-124-2625</p>
