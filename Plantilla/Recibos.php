@@ -81,17 +81,17 @@
                         <div class="contenedor">  
                             <div class="input-contenedor">
                             <label for="name">Consumo en kWh:<br></label>
-                                <input name="consumo" type="text" placeholder="Ingresa el consumo"><br><br>
+                                <input required name="consumo" type="text" placeholder="Ingresa el consumo"><br><br>
                             </div>
 
                             <div class="input-contenedor">
                             <label for="name">Monto total: $ <br></label>
-                                <input name="monto" type="text" placeholder="Ingresa el monto"><br><br>
+                                <input required name="monto" type="text" placeholder="Ingresa el monto"><br><br>
                             </div>
                     
                             <div class="input-contenedor">
                             <label for="name">Año:<br></label>
-                                <input name="anio" type="text" placeholder="Ingresa el año"><br><br>
+                                <input required name="anio" type="text" placeholder="Ingresa el año"><br><br>
                             </div>
 
                             <div class="input-contenedor">
@@ -119,7 +119,7 @@
                     </form><br><br>	
                     <form class="formulario" name="form2" method="post" action="Recibos.php" id="form2">
                     <input name="usuario" type="hidden" placeholder="Ingresa el usuario" value=<?php echo $usuario;?> >										
-                        <p>Ingrese el año para ver sus recibos: <input type="text" id="year" name="year"></p>
+                        <p>Ingrese el año para ver sus recibos: <input required type="text" id="year" name="year"></p>
                         <button type="submit" name="busca_recibo" class="btn btn-success">BUSCAR</button>
                     </form>
                     
