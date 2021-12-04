@@ -20,6 +20,7 @@
     
 
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body style=" background-image:url(img/fd2.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">
 	<div class="site-main" id="sTop">
@@ -76,34 +77,32 @@
                         <div  style="padding-left: 10px; padding-right: 5px;opacity:0.9;"  class="panel panel-default">
                         <h1 style="font-family: serif;font-weight: bolder;color:#0C8B88;"><center>Registra el aparato</center></h1>
                         <h5 style="color : black;"><center>Complete los datos a continuación: </center></h5>
-                        <form  class="formulario" name="form1" method="post" action="logic/p_recibo.php" id="form1">
+                        <form  class="formulario" name="form3" method="post" action="logic/p_aparato.php" id="form3" enctype="multipart/form-data">
                             <br>
                             <div class="col-md-12">
                             <label class="control-label col-sm-3">Nombre:</label>
                                <input class="form-control" type="text" name="name" placeholder="Nombre del aparato" required> 
                             </div><br>
+
                             <div class="col-md-12">
                             <label class="control-label col-sm-3">Consumo:</label>
                              <input class="form-control" type="consumo" name="consumo" placeholder="Consumo wh/h" required>
                              <h5>¿No sabes el consumo? Consulta <u><a href="https://www.conermex.com.mx/webinar/tabla-consumos-CFE.pdf" style="color:black;">Aquí</a></u></h5>
                              <br>
                             </div>
+
                             <br><br><br><br>
                             <br>
-                                <div class="form-group">
-                                <label class="control-label col-sm-3">Imagen: </label>
-                                <div class="col-sm-3">
-                                <input type="file" name="imagen" >
-                                </div>
-                            </div><br><br><br><br>
-                  
-                            <div class="form-button mt-3">
-                            <center><button id="submit" type="submit" class="btn btn-primary">REGISTRAR</button></center>
-                            </div>
-                        </form>   
-                        <br>                  
 
-   
+                            <div class="col-md-12">
+                            <label class="control-label col-sm-3">Imagen: </label>
+                            <input type="file"  name="imagen">
+                            </div><br><br><br><br>
+
+                            <center><button id="submit" type="submit" name="ingresa_aparato" class="btn btn-primary">REGISTRAR</button></center>
+                        </form> 
+                        
+                        <br>                  
                         </div>
 					</div>
 				</div><div class="col-md-3"></div>
