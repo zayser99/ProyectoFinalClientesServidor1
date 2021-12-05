@@ -22,17 +22,35 @@
 $consumo= $_POST['consumo'];
 $paneles = round($consumo*0.0092165898617512);
 $baterias = round($consumo*0.0207373271889401);
-?>
-	<div class="ban"><!--Los que tengan "---" serán los que hay que poner los resultados con la base de datos-->
-		<img src="img/blog-post-2.jpg" width="1366" height="200" />
+?>	
+	<div id="imp">
+	<div  class="ban"><!--Los que tengan "---" serán los que hay que poner los resultados con la base de datos-->
+		<img src="img/fd1.jpg" width="1366" height="200" />
 		<center><h1><font color="black">Tu consumo es de:</font></h1>
 			<h2><font color="gray"> <?php echo $consumo?> kw/s</font></h2>
 			<h3><font color="black">Paneles solares que necesitas:</font></h3>
-			<h4><font color="gray"> <?php echo $paneles?> panles solares de 450w</font></h4>
+			<h4><font color="gray"> <?php echo $paneles?> paneles solares de 450w</font></h4>
 			<h3><font color="black">Paneles solares que necesitas:</font></h3>
-			<h4><font color="gray"><?php echo $baterias?> baterías de 150Ah</font></h4><br><br>
-			<h4><a class="boton" onclick="javascript:window.print()">Imprimir</a></h4>
+			<h4><font color="gray"><?php echo $baterias?> baterías de 150Ah</font></h4><br><br>	
 		</center>
 	</div>
+	</div>
+			
+			<center>
+			<h4><a class="boton" onclick="javascript:imprim(imp)">Imprimir</a></h4><br>
+			<button type="submit" name="regreesa" class="boton" onclick="window.location.href='Recibos.php'">REGRESAR</button>
+			</center>
+
+			<script>
+			function imprim(imp){
+			var printContents = document.getElementById('imp').innerHTML;
+        	w = window.open();
+        	w.document.write(printContents);
+        	w.document.close(); // necessary for IE >= 10
+        	w.focus(); // necessary for IE >= 10
+			w.print();
+			w.close();
+        	return true;}
+			</script>
 </body>
 </html>
