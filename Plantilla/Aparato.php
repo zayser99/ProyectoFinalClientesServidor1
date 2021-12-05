@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/owl-carousel.css">
 	<!-- css del grid de aparatos -->
 
-    <link rel="stylesheet" href="css/estilo_apa.css">
+    <link rel="stylesheet" href="css/grid_productos.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     
 

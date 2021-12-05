@@ -49,7 +49,7 @@
                                                 $usuario = $_SESSION['user'];
                                                 
                                                 if(!isset($usuario)){
-                                                header("location: index.php");
+                                                    header("location: Login.php");
                                                 echo "Sin sesion";
                                                 }else{
                                                 echo ($usuario);

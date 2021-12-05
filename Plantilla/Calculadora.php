@@ -47,9 +47,11 @@
                                                 <?php
                                                 session_start();
                                                 error_reporting(0);
+                                                
                                                 $usuario = $_SESSION['user'];
                                                 if(!isset($usuario)){
                                                 echo "Sin sesion";
+                                                header("location: Login.php");
                                                 }else{
                                                 echo ($usuario);
                                                 }
