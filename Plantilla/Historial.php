@@ -95,7 +95,7 @@
 								$resultados = mysqli_query($mysqli,$query);
 								while($row = $resultados->fetch_assoc()){
 								?>
-									<div class="col-md-3 col-sm-6">
+									<div class="col-md-3 col-sm-6" style="padding-right:50px;">
 										<div class="product-grid2">
 											<div class="product-image2">
 												<a href="#">
@@ -109,8 +109,13 @@
                                                 <span class="price" ><b>Codigo: </b><?php echo $row['id_historial'];  ?> </span><br>
                                                 <span class="price" ><b>Fecha: </b><?php echo $row['fecha_historial'];  ?> </span><br>
 												<span class="price" ><b>Descripción: </b><?php echo $row['desc_energia'];  ?> </span>
+                                                
+                                                <form name='vermas' method='POST' action='vermas.php'>
+                                                <input type=hidden name='vermas' value= "<?php echo $row['id_historial']; ?>" >
+                                                <center><button type="submit" name="vermas" class="btn btn-primary" >ver más</button></center>
+                                                </form>
                                             </div>
-											
+
 										</div>
                                   	</div>
                                     <?php
