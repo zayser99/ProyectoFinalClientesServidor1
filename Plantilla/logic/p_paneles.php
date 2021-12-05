@@ -64,22 +64,33 @@ if(isset($_POST['paneles']) and isset($_SESSION['calculo'])){
 		//Actualizo el historial con el total en kwh
 		$queryhistoact = mysqli_query($mysqli,"UPDATE historial SET consumo_estimado = '$total',desc_energia = '$descripcion'  WHERE id_historial = '$idhisto';");
 		//Actualizo el historial con el total en kwh
-
+        echo"<form name='envia' method='POST' action='../Plantilla.php'>
+                <input type=hidden name='consumo' value= $total2 >
+                </form>
+                <script language='JavaScript'>
+                document.envia.submit();
+                </script>";
+ 
 		if ($total==0) {
-			echo "Agrega aparatos";
+			echo ";<script>
+        swal({title: 'Agrega aparatos!!', icon: 'warning',button:'OK',}).then((value)=>{window.location.href='../Calculadora.php'});
+		</script>";
 		}
 		if ($total>0) {
 			echo "<hr>El consumo total al mes es de: $total W";
 		}
 		unset($_SESSION["calculo"]);
 		echo ";<script>
-        swal({title: 'Calculo realizado con éxito!!', icon: 'success',button:'OK',}).then((value)=>{window.location.href='../Calculadora.php'});
+        swal({title: 'Calculo realizado con éxito!!', icon: 'success',button:'OK',});
 		</script>";
 	}else{
-    	echo "<script>alert('Agrega aparatos');window.location.href='../Calculadora.php';</script>"; 
+    	echo ";<script>
+        swal({title: 'Agrega aparatos!!', icon: 'warning',button:'OK',}).then((value)=>{window.location.href='../Calculadora.php'});
+		</script>";
     }
 
 ?>
+                
 
 </body>
 </html>
