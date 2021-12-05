@@ -110,9 +110,9 @@
                                                 <span class="price" ><b>Fecha: </b><?php echo $row['fecha_historial'];  ?> </span><br>
 												<span class="price" ><b>Descripción: </b><?php echo $row['desc_energia'];  ?> </span>
                                                 
-                                                <form name='vermas' method='POST' action='vermas.php'>
+                                                <form  class="formulario" name="form6" method="post" action="vermas.php" id="form6">
                                                 <input type=hidden name='vermas' value= "<?php echo $row['id_historial']; ?>" >
-                                                <center><button type="submit" name="vermas" class="btn btn-primary" >ver más</button></center>
+                                                <center><button type="submit" name="vermas1" onclick="location.href=vermas.php'"  class="btn btn-primary" >ver más</button></center>
                                                 </form>
                                             </div>
 
