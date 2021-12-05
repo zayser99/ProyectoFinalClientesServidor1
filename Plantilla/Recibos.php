@@ -148,8 +148,8 @@
                     <div class="col-md-6 col-sm-12">
                     <div class="product-grid2">
                     <div class="product-content">
-                    <div class="price" style="text-align: left;color: white;background:green;padding:10px;opacity:0.8;">
-                    
+                    <div class="price" style="text-align: left;color: white;background:green;padding:10px;opacity:0.8;">  
+                        
                     <?php
                     echo "<b>Codigo de recibo: </b>".$row['id_recibo']."<br>";
                     echo "<b>Fecha de registro: </b>".$row['fecha_reg']."<br>";
@@ -159,6 +159,11 @@
                     echo "<b>Usuario: </b>".$usuario."<br>";
                     echo "<b>Bimestre: </b>".$row['nombre_bimestre']."<br>";
                     ?>
+                     <form action="Plantilla.php" name="" method="post">       
+                            <input style="display:none" type="text" class="form-control" name="consumo" id="consumo", value="<?php echo $row['consumo']?>" >
+                            </div>
+                        <center><button class="btn btn-success" type="submit" name="enviar" id="enviar" value="Registrarse">CALCULAR PANELES</button></center>
+                    </form>                   
                     </div>   
                     </div>
                     </div>
