@@ -71,65 +71,107 @@
 				<div class="col-md-12">
 					<div class="section-heading">
                         <div style="color:white;background:green;opacity:0.8;font-family: serif;font-weight: bolder;font-size: xx-large">
-						<br>CALCULADORA DE ENERGÍAS LIMPIAS
-                        <h1 >Elige el tipo de aparato:</h1>
-                        <h3 style="text-align:center;" >¿No encontraste tu electrodoméstico? Registra <u><a href="Aparato.php" style="color:white;">Aquí</a></u>     </h3><br>
-                        <button type="submit" class="btn btn-danger" onclick="window.location.href='Lista_aparato.php'" >CALCULAR</button>
-                    </div>
-                        
+						<br>MIS APARATOS
+
+                        </div>
+
 						<center><div class="calculadora">
                         <div  style="padding-left: 10px; padding-right: 5px;opacity:0.9;" class="panel panel-default">
-							<div class="container">
-								<h1 style="font-family: serif;font-weight: bolder;">APARATOS</h1>
-								<div class="row">
-								<?php 
-								include('connect.php');
-								$query = "SELECT * FROM aparato";
-								$resultados = mysqli_query($mysqli,$query);
-								while($row = $resultados->fetch_assoc()){
-								?>
-									<div class="col-md-3 col-sm-6">
-										<div class="product-grid2">
-											<div class="product-image2">
-												<a href="#">
-												<img class="pic-1" width="100%" height="240" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen_producto']); ?>">
-												<img class="pic-2" width="100%" height="240" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen_producto']); ?>">
-												</a>
-											</div>
-											<div class="product-content">
-												<h3 class="title"><a href="#"> <?php echo $row['nombre_aparato'];  ?> </a></h3>
-												<span class="price"><?php echo $row['consumo_ind'];  ?> wh/h</span>
-                                            <form class="formulario" name="form4" method="post" action="logic/p_calcula.php" id="form4">
-											<input type="hidden" name="aparato" value="<?php echo $row['nombre_aparato'];?>">
-											<input type="hidden" name="consumo" value="<?php echo $row['consumo_ind'];?>">
-											
-                                            <div class="input-contenedor">
-                                            <label>Cantidad:</label>
-											<input style="text-align:center" type="number"  min="1" max="50" step="1" name="cantidad" value="1" >
-                                            </div>
-                                            <div class="input-contenedor">
-                                            <label >Horas:</label>
-											<input style="text-align:center" type="number"  min="1" max="24" step="1" name="horas" value="1" >
-                                            </div>
-                                            <div class="input-contenedor">
-                                            <label >Días:</label>
-											<input style="text-align:center" type="number"  min="1" max="31" step="1" name="dias" value="1" >
-                                            </div>
-                                      
-											<br><br><br><br>
-											<button type="submit" name="agrega_calculo" class="add-to-cart">AGREGAR</button>
-											</form>
-                                            </div>
-											
-										</div>
-                                  	</div>
-                                    <?php
-									    }
-									    ?>
-								</div>
-							</div>
-                            </div>
-							<hr>							
+                        <!-- inicia el contenedor donde se empiezan a imprimir los artefactos -->
+                        <div class="row">
+                        <?php
+                        include('connect.php');
+                        $total=0;
+                        if(isset($_SESSION['calculo'])){
+                            foreach ($_SESSION["calculo"] as $indice =>$arreglo){
+                        ?>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product-grid4">
+                                    <div class="product-content">
+                                        <div class="price">  
+
+                            <?php
+                                $queryimg = "SELECT * FROM aparato WHERE nombre_aparato = '$indice'";
+                                $resultados = mysqli_query($mysqli,$queryimg);
+                                while($row = $resultados->fetch_assoc()){?>
+                                <img width="100%" height="200" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen_producto']); ?>">
+                                <?php
+                                }
+                                echo "<hr>Aparato: "."<br>".$indice."<br>";
+                                $total +=$arreglo['cantidad'] * $arreglo['consumo']* $arreglo['horas']* $arreglo['dias'];
+                                echo "Cantidad: ".$arreglo['cantidad']."<br>";
+                                echo "Consumo: ".$arreglo['consumo']."wh/h"."<br>";
+                                echo "Horas: ".$arreglo['horas']."<br>";
+                                echo "Dias: ".$arreglo['dias']."<br><br>";
+
+                            echo "<a href='Lista_aparato.php?item=$indice'>Eliminar aparato</a>";
+                            if (isset($_REQUEST['item'])) {
+                            $aparato_elim = $_REQUEST['item'];
+                            unset($_SESSION['calculo'][$aparato_elim]);
+                            echo"<script language='javascript'>window.location='Lista_aparato.php'</script>;";
+                        }
+                        if (isset($_REQUEST["vaciar"])) {
+                            unset($_SESSION["calculo"]);
+                            echo"<script language='javascript'>window.location='Lista_aparato.php'</script>;";
+                        }
+                            ?>
+
+                        
+                        </div>
+                        </div>
+
+                        </div>
+                        <br> <br> 
+                        </div>
+
+                        <?php
+                            }
+                            
+                            
+                        }else{
+                            echo "<script>
+                        swal({title: 'No tienes aparatos agregados!!', icon: 'success',button:'OK',});
+                        </script>";
+                        }
+                        ?>
+
+                        </div>
+                        <div style="color:#333399; padding-left: 10px; padding-right: 5px;font-size:32px;font-family:'Times New Roman', Times, serif;" >
+                        <?php
+                        if ($total==0) {
+                            echo "<script>
+                        swal({title: 'Se borraron los aparatos!!', icon: 'success',button:'OK',});
+                        </script>";
+                                echo "Aún no agregas tus aparatos :(";
+                            }
+                            if ($total>0) {
+                                echo "<hr><hr>El consumo total al mes es de: $total wh/h";
+                        }
+                        ?>
+                        </div>
+
+                        <!-- parte de los botones en el contenedor    ---------->
+                        <div style="padding-left: 10px; padding-right: 5px;font-size:32px;font-family:Arial, Helvetica, sans-serif;">
+
+                        <div class="container">
+                        <div class="row">
+                        <div class="col-md-5"></div>
+                        <div class="col-md-1">
+                        <form name="form2" method="post" action="p_compra.php" id="form2">
+                            <button type="submit" name="compra" class="btn btn-success" onclick="location.href='p_compra.php'" >Calcular paneles</button>
+                        </form>
+                        </div>
+                        <div class="col-md-3"><button class="btn btn-danger" onclick="location.href='Lista_aparato.php?vaciar=true'" name="vaciar"> Borrar todo</button>
+                        </div>
+                        <div class="col-md-3">
+                        <button  class="btn btn-primary" onclick="location.href='Calculadora.php'"> Regresar</button>
+                        </div>
+                        </div>
+                        </div>
+                        <br>
+                        <center></center>
+                        </div>
+                        <br><br>							
 						</div></center><!--hasta aqui va un registro de aparato-->
                     	
 					</div>
