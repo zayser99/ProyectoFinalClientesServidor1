@@ -129,6 +129,7 @@
                     
 					<br>
                     </div>
+
 					</div>
                     
                     <?php 
@@ -144,8 +145,9 @@
                     $query = "SELECT * FROM recibo INNER JOIN bimestre ON recibo.id_bimestre = bimestre.id_bimestre  WHERE recibo.anio ='$year' and recibo.id_usuario='$idu'";
                     $resultados = mysqli_query($mysqli,$query);
                     while($row = $resultados->fetch_assoc()){ ?>
-                    
-                    <div class="col-md-6 col-sm-12">
+                   
+                    <div class="col-md-8 col-sm-12" >
+
                     <div class="product-grid2">
                     <div class="product-content">
                     <div class="price" style="text-align: left;color: white;background:green;padding:10px;opacity:0.8;">  
@@ -159,16 +161,18 @@
                     echo "<b>Usuario: </b>".$usuario."<br>";
                     echo "<b>Bimestre: </b>".$row['nombre_bimestre']."<br>";
                     ?>
+                     </div>
                      <form action="Plantilla.php" name="" method="post">       
                             <input style="display:none" type="text" class="form-control" name="consumo" id="consumo", value="<?php echo $row['consumo']?>" >
-                            </div>
+                            
                         <center><button class="btn btn-success" type="submit" name="enviar" id="enviar" value="Registrarse">CALCULAR PANELES</button></center>
                     </form>                   
                     </div>   
                     </div>
                     </div>
+                     
                     <br> <br> 
-                    </div>
+                
 
                     <?php
                     }//fin while
