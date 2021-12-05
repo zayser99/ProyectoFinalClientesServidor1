@@ -98,7 +98,7 @@
 											</div>
 											<div class="product-content">
 												<h3 class="title"><a href="#"> <?php echo $row['nombre_aparato'];  ?> </a></h3>
-												<span class="price"><?php echo $row['consumo_ind'];  ?> wh/h</span>
+												<span class="price"><?php echo $row['consumo_ind'];  ?> W-h</span>
                                             <form class="formulario" name="form4" method="post" action="logic/p_calcula.php" id="form4">
 											<input type="hidden" name="aparato" value="<?php echo $row['nombre_aparato'];?>">
 											<input type="hidden" name="consumo" value="<?php echo $row['consumo_ind'];?>">

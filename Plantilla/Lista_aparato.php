@@ -145,7 +145,7 @@
                                 echo "Aún no agregas tus aparatos :(";
                             }
                             if ($total>0) {
-                                echo "<hr><hr>El consumo total al mes es de: $total wh/h";
+                                echo "<hr><hr>El consumo total al mes es de: $total W";
                         }
                         ?>
                         </div>
@@ -157,8 +157,8 @@
                         <div class="row">
                         <div class="col-md-5"></div>
                         <div class="col-md-1">
-                        <form name="form2" method="post" action="p_compra.php" id="form2">
-                            <button type="submit" name="compra" class="btn btn-success" onclick="location.href='p_compra.php'" >Calcular paneles</button>
+                        <form name="form2" method="post" action="logic/p_paneles.php" id="form2">
+                            <button type="submit" name="paneles" class="btn btn-success" onclick="location.href='logic/p_paneles.php'" >Calcular paneles</button>
                         </form>
                         </div>
                         <div class="col-md-3"><button class="btn btn-danger" onclick="location.href='Lista_aparato.php?vaciar=true'" name="vaciar"> Borrar todo</button>

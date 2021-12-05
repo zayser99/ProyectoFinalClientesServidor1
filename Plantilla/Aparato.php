@@ -86,7 +86,7 @@
 
                             <div class="col-md-12">
                             <label class="control-label col-sm-3">Consumo:</label>
-                             <input class="form-control" type="consumo" name="consumo" placeholder="Consumo wh/h" required>
+                             <input class="form-control" type="consumo" name="consumo" placeholder="Consumo wh" required>
                              <h5>¿No sabes el consumo? Consulta <u><a href="https://www.conermex.com.mx/webinar/tabla-consumos-CFE.pdf" style="color:black;">Aquí</a></u></h5>
                              <br>
                             </div>
