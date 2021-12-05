@@ -37,7 +37,8 @@ $baterias = round($consumo*0.0207373271889401);
 	</div>
 			
 			<center>
-			<h4><a class="boton" onclick="javascript:imprim(imp)">Imprimir</a></h4><br>
+			<h4><font color="gray"> Puede cotizar precios <u><a href="https://rosensolar.en.made-in-china.com/?keyword=solar%20panel&gclid=CjwKCAiAwKyNBhBfEiwA_mrUMrxhroUZc6ohz8ilkx6OhrqetoHxcQWD4nCE4kv3NV0vfgyG3gz1vhoCyskQAvD_BwE" style="color:black;">Aquí</a></u></font></h4>
+			<br><h4><a class="boton" onclick="javascript:imprim(imp)">Imprimir</a></h4><br>
 			<button type="submit" name="regreesa" class="boton" onclick="window.location.href='index.php'">INICIO</button>
 			</center>
 
