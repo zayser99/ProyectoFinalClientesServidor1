@@ -76,7 +76,7 @@
                         <form style="font-size: 20px;" class="formulario" name="form5" method="post" action="Historial.php" id="form5">
                         <div class="input-contenedor">
                         <label>Fecha:</label>
-						<input style="text-align:center;color:black;" type="date" name="fechaxd">
+						<input style="text-align:center;color:black;" type="date" name="fechaxd" >
                         </div><br>
 					    <button type="submit" class="btn btn-primary">BUSCAR</button><br><br>
 						</form>
@@ -98,13 +98,13 @@
 										<div class="product-grid2">
 											<div class="product-image2">
 												<a href="#">
-												<img class="pic-1" width="100%" height="240" src="img/fd9.jpg">
+												<img class="pic-1" width="100%" height="240" src="img/fd11.jpg">
 												<img class="pic-2" width="100%" height="240" src="img/fd10.jpeg">
 												</a>
 											</div>
 											<div class="product-content">
-												<h3 class="title"><a href="#"> <?php echo $row['nombre_aparato'];  ?> </a></h3>
-												<span class="price"><?php echo $row['consumo_ind'];  ?> W-h</span>
+												<h3 class="title"><a href="#"> <?php echo $row['consumo_estimado'];  ?>W-h </a></h3>
+												<span class="price"><?php echo $row['desc_energia'];  ?> </span>
                                             </div>
 											
 										</div>
