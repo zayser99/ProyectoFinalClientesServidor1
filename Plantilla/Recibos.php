@@ -70,8 +70,8 @@
 		<div class="container">
         
 			<div class="row">
-            <div class="col-md-2"></div>
-				<div class="col-md-8">
+            <div class="col-md-2 "></div>
+				<div class="col-md-8 ">
 					<div class="section-heading">
 						<br><br><br>
                     <div  style="padding-left: 10px; padding-right: 5px;opacity:0.9;" class="panel panel-default">
@@ -132,7 +132,12 @@
 
 					</div>
                     
-                    <?php 
+                    
+                    
+				</div> 
+                <div class="col-md-2"></div>
+                <div class="col-md-2"></div>
+                <?php 
                     include('connect.php');
                     $year = $_POST["year"];
                     $usuario = $_POST["usuario"];
@@ -146,7 +151,7 @@
                     $resultados = mysqli_query($mysqli,$query);
                     while($row = $resultados->fetch_assoc()){ ?>
                    
-                    <div class="col-md-8 col-sm-12" >
+                    <div class="col-md-4">
 
                     <div class="product-grid2">
                     <div class="product-content">
@@ -162,18 +167,20 @@
                     echo "<b>Bimestre: </b>".$row['nombre_bimestre']."<br>";
                     ?>
                      </div>
+                     <div class="col-md-4"></div>  
                      <form action="Plantilla.php" name="" method="post">       
                             <input style="display:none" type="text" class="form-control" name="consumo" id="consumo", value="<?php echo $row['consumo']?>" >
                             
-                        <center><button class="btn btn-success" type="submit" name="enviar" id="enviar" value="Registrarse">CALCULAR PANELES</button></center>
-                    </form>                   
+                        <button class="btn btn-success" type="submit" name="enviar" id="enviar" value="Registrarse">CALCULAR PANELES</button>
+                    </form> 
+                                  
                     </div>   
+                       
                     </div>
-                    </div>
-                     
-                    <br> <br> 
-                
-
+                    
+                    </div>                                        
+                    <br> <br>  
+                                 
                     <?php
                     }//fin while
                     $nrows = mysqli_num_rows($resultados);
@@ -186,8 +193,8 @@
                     }
                     ?>
                     
-				</div> 
-                <div class="col-md-2"></div>
+
+
 			</div>
        
 		</div>
