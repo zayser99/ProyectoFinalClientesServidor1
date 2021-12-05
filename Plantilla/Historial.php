@@ -71,21 +71,26 @@
 				<div class="col-md-12">
 					<div class="section-heading">
                         <div style="color:white;background:green;opacity:0.8;font-family: serif;font-weight: bolder;font-size: xx-large">
-						<br>CALCULADORA DE ENERGÍAS LIMPIAS
-                        <h1 >Elige el tipo de aparato:</h1>
-                        <h3 style="text-align:center;" >¿No encontraste tu electrodoméstico? Registra <u><a href="Aparato.php" style="color:white;">Aquí</a></u>     </h3><br>
-                        <button type="submit" class="btn btn-danger" onclick="window.location.href='Lista_aparato.php'" >CALCULAR</button>
-                        <button type="submit" class="btn btn-primary" onclick="window.location.href='Historial.php'" >CONSULTAR HISTORIAL</button>
+						<br>HISTORIAL
+                        <h1 >Consulta tus calculos por fecha:</h1>
+                        <form style="font-size: 20px;" class="formulario" name="form5" method="post" action="Historial.php" id="form5">
+                        <div class="input-contenedor">
+                        <label>Fecha:</label>
+						<input style="text-align:center;color:black;" type="date" name="fechaxd">
+                        </div><br>
+					    <button type="submit" class="btn btn-primary">BUSCAR</button><br><br>
+						</form>
                     </div>
                         
 						<center><div class="calculadora">
                         <div  style="padding-left: 10px; padding-right: 5px;opacity:0.9;" class="panel panel-default">
 							<div class="container">
-								<h1 style="font-family: serif;font-weight: bolder;">APARATOS</h1>
+								<h1 style="font-family: serif;font-weight: bolder;">CALCULOS</h1>
 								<div class="row">
 								<?php 
 								include('connect.php');
-								$query = "SELECT * FROM aparato";
+                                $fechaxd = $_POST["fechaxd"];
+								$query = "SELECT * FROM historial";
 								$resultados = mysqli_query($mysqli,$query);
 								while($row = $resultados->fetch_assoc()){
 								?>
@@ -93,33 +98,13 @@
 										<div class="product-grid2">
 											<div class="product-image2">
 												<a href="#">
-												<img class="pic-1" width="100%" height="240" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen_producto']); ?>">
-												<img class="pic-2" width="100%" height="240" src="data:image/jpg;base64, <?php echo base64_encode($row['imagen_producto']); ?>">
+												<img class="pic-1" width="100%" height="240" src="img/fd9.jpg">
+												<img class="pic-2" width="100%" height="240" src="img/fd10.jpeg">
 												</a>
 											</div>
 											<div class="product-content">
 												<h3 class="title"><a href="#"> <?php echo $row['nombre_aparato'];  ?> </a></h3>
 												<span class="price"><?php echo $row['consumo_ind'];  ?> W-h</span>
-                                            <form class="formulario" name="form4" method="post" action="logic/p_calcula.php" id="form4">
-											<input type="hidden" name="aparato" value="<?php echo $row['nombre_aparato'];?>">
-											<input type="hidden" name="consumo" value="<?php echo $row['consumo_ind'];?>">
-											
-                                            <div class="input-contenedor">
-                                            <label>Cantidad:</label>
-											<input style="text-align:center" type="number"  min="1" max="50" step="1" name="cantidad" value="1" >
-                                            </div>
-                                            <div class="input-contenedor">
-                                            <label >Horas:</label>
-											<input style="text-align:center" type="number"  min="1" max="24" step="1" name="horas" value="1" >
-                                            </div>
-                                            <div class="input-contenedor">
-                                            <label >Días:</label>
-											<input style="text-align:center" type="number"  min="1" max="31" step="1" name="dias" value="1" >
-                                            </div>
-                                      
-											<br><br><br><br>
-											<button type="submit" name="agrega_calculo" class="add-to-cart">AGREGAR</button>
-											</form>
                                             </div>
 											
 										</div>
