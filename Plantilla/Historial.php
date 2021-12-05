@@ -72,7 +72,7 @@
 					<div class="section-heading">
                         <div style="color:white;background:green;opacity:0.8;font-family: serif;font-weight: bolder;font-size: xx-large">
 						<br>HISTORIAL
-                        <h1 >Consulta tus calculos por fecha:</h1>
+                        <h1 >Consulta tus cálculos por fecha:</h1>
                         <form style="font-size: 20px;" class="formulario" name="form5" method="post" action="Historial.php" id="form5">
                         <div class="input-contenedor">
                         <label>Fecha:</label>
@@ -85,7 +85,7 @@
 						<center><div class="calculadora">
                         <div  style="padding-left: 10px; padding-right: 5px;opacity:0.9;" class="panel panel-default">
 							<div class="container">
-								<h1 style="font-family: serif;font-weight: bolder;">CALCULOS</h1>
+								<h1 style="font-family: serif;font-weight: bolder;">CÁLCULOS</h1>
 								<div class="row">
 								<?php 
 								include('connect.php');

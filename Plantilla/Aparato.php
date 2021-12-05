@@ -97,13 +97,15 @@
                             <div class="col-md-12">
                             <label class="control-label col-sm-3">Imagen: </label>
                             <input type="file"  name="imagen">
-                            </div><br><br><br><br>
+                            </div><br><br><br><br><br>
 
-                            <center><button id="submit" type="submit" name="ingresa_aparato" class="btn btn-primary">REGISTRAR</button></center>
+                            <center><button style="background: #1166B3 ;" id="submit" type="submit" name="ingresa_aparato" class="btn btn-primary">REGISTRAR</button></center>
                         </form> 
                         
-                        <br>                  
+                        <br>   
+                        <center><button style="background: #11B31D ;" type="submit" name="reg1" onclick="location.href='Calculadora.php'"  class="btn btn-primary" >REGRESAR</button></center><br>               
                         </div>
+                        
 					</div>
 				</div><div class="col-md-3"></div>
 			</div>
