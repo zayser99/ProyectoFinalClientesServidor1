@@ -19,7 +19,7 @@
 
     <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
 </head>
-<body style=" background-image:url(img/fd2.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">
+<body style=" background-image:url(img/fd4.jpg);background-position: center center;background-repeat: no-repeat;background-size: cover;background-attachment: fixed;">
 	<div class="site-main" id="sTop">
 		<div class="site-header">
 			<div class="main-header">
@@ -90,7 +90,8 @@
 								<?php 
 								include('connect.php');
                                 $fechaxd = $_POST["fechaxd"];
-								$query = "SELECT * FROM historial";
+                                $fechaBD = date("Y-m-d", strtotime($fechaxd));
+								$query = "SELECT * FROM historial where fecha_historial = '$fechaBD'";
 								$resultados = mysqli_query($mysqli,$query);
 								while($row = $resultados->fetch_assoc()){
 								?>
@@ -102,9 +103,12 @@
 												<img class="pic-2" width="100%" height="240" src="img/fd10.jpeg">
 												</a>
 											</div>
-											<div class="product-content">
-												<h3 class="title"><a href="#"> <?php echo $row['consumo_estimado'];  ?>W-h </a></h3>
-												<span class="price"><?php echo $row['desc_energia'];  ?> </span>
+											<div style="text-align: left" class="product-content">
+                                                
+												<h3 class="title"><a href="#"><b>Consumo:</b> <?php echo $row['consumo_estimado'];  ?> W/h </a></h3>
+                                                <span class="price" ><b>Codigo: </b><?php echo $row['id_historial'];  ?> </span><br>
+                                                <span class="price" ><b>Fecha: </b><?php echo $row['fecha_historial'];  ?> </span><br>
+												<span class="price" ><b>Descripción: </b><?php echo $row['desc_energia'];  ?> </span>
                                             </div>
 											
 										</div>
