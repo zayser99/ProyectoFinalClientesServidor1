@@ -30,7 +30,7 @@ $baterias = round($consumo*0.0207373271889401);
 			<h2><font color="gray"> <?php echo $consumo?> kWh</font></h2>
 			<h3><font color="black">Paneles solares que necesitas:</font></h3>
 			<h4><font color="gray"> <?php echo $paneles?> paneles solares de 450w</font></h4>
-			<h3><font color="black">Paneles solares que necesitas:</font></h3>
+			<h3><font color="black">Baterías que necesitas:</font></h3>
 			<h4><font color="gray"><?php echo $baterias?> baterías de 150Ah</font></h4><br><br>	
 		</center>
 	</div>
